@@ -2,6 +2,9 @@
 
 A comprehensive web-based solution built for **HackTopus 2025**, designed to streamline and support disaster response efforts using AI-powered tools, live tracking, and real-time communication.
 
+
+<img src="https://github.com/subhamsinhadev/HackTopus-2025/blob/main/Logo/Icon.png" alt="Description" width="300"/>
+
 ## Features
 
 ### 1. **AI Chat Bot**
