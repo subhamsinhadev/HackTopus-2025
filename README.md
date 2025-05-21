@@ -1,7 +1,7 @@
 # Disaster Management System
 
 A comprehensive web-based solution built for **HackTopus 2025**, designed to streamline and support disaster response efforts using AI-powered tools, live tracking, and real-time communication.
-
+![](https://github.com/subhamsinhadev/HackTopus-2025/blob/main/Logo/Icon.png)
 ## Features
 
 ### 1. **AI Chat Bot**
