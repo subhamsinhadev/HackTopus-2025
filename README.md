@@ -67,13 +67,14 @@ A comprehensive web-based solution built for **HackTopus 2025**, designed to str
 # Contributors
 
 Subham Kumar Sinha– @subhamsinhadev – Python Developer, API Developer.
+
 Aditya Kumar  – Web Developer, Integration.
 
-Arpita SHARMA - Frontend Developer, UI/UX Designer .
+Arpita Sharma - Frontend Developer, UI/UX Designer .
 
-AKANKSHA SRIVASTAVA - API INTEGRATION, Web Developer .
+Akanksha Srivastava - API INTEGRATION, Web Developer .
 
-ANAMIKA KUMARI PRASAD - AIML Backend .
+Anamika Kumari Prasad - AIML Backend .
 
 
 # License
