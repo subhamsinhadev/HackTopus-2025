@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Disaster Management - Login</title>
+  <title>Disaster Management - Sign In</title>
   <style>
     * {
       box-sizing: border-box;
@@ -11,84 +11,94 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f2f4f8;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      height: 100vh;
     }
 
     .container {
       display: flex;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      max-width: 900px;
+      max-width: 1000px;
       width: 100%;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       flex-wrap: wrap;
     }
 
-    .image-section {
+    .left-img {
       flex: 1;
-      min-width: 300px;
-      background: url('https://cdn.pixabay.com/photo/2017/06/29/00/47/storm-2455195_960_720.jpg') center/cover no-repeat;
+      background: url('https://i.ibb.co/tMX3CP69/Icon.png') center center / cover no-repeat;
+      min-height: 400px;
     }
 
-    .form-section {
+    .right-form {
       flex: 1;
       padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .form-section h2 {
-      margin-bottom: 20px;
-      color: #333;
+    .right-form h2 {
+      margin-bottom: 25px;
+      color: #1e293b;
       text-align: center;
     }
 
-    .form-section input {
-      width: 100%;
+    .right-form input {
       padding: 12px;
       margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
       font-size: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      transition: border 0.3s;
+      width: 100%;
     }
 
-    .form-section button {
-      width: 100%;
+    .right-form input:focus {
+      border-color: #2563eb;
+      outline: none;
+    }
+
+    .right-form button {
       padding: 12px;
-      background-color: #007bff;
-      border: none;
+      background-color: #2563eb;
       color: white;
       font-size: 1rem;
+      border: none;
       border-radius: 6px;
       cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s;
     }
 
-    .form-section button:hover {
-      background-color: #0056b3;
+    .right-form button:hover {
+      background-color: #1d4ed8;
     }
 
     #errorMsg {
       color: red;
-      text-align: center;
       margin-top: 10px;
+      text-align: center;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
-        align-items: center;
       }
 
-      .image-section {
-        width: 100%;
+      .left-img {
         height: 200px;
+        width: 100%;
       }
 
-      .form-section {
+      .right-form {
         padding: 30px 20px;
       }
     }
@@ -96,13 +106,14 @@
 </head>
 <body>
   <div class="container">
-    <div class="image-section"></div>
-    <div class="form-section">
-      <h2>Disaster Management Login</h2>
+    <div class="left-img"></div>
+    <div class="right-form">
+      <h2>Disaster Management - Sign In</h2>
       <form id="loginForm">
         <input type="text" id="username" placeholder="Username" required />
+        <input type="email" id="email" placeholder="Email" required />
         <input type="password" id="password" placeholder="Password" required />
-        <button type="submit">Login</button>
+        <button type="submit">Sign In</button>
         <p id="errorMsg"></p>
       </form>
     </div>
@@ -113,14 +124,15 @@
       e.preventDefault();
 
       const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value.trim();
 
-      if (username === "admin" && password === "1234") {
+      // Basic validation example
+      if (username === "admin" && email === "admin@example.com" && password === "1234") {
         alert("Login successful!");
-        // Replace with actual redirection
-        window.location.href = "dashboard.html";
+        window.location.href = "dashboard.html"; // Change this to your dashboard
       } else {
-        document.getElementById("errorMsg").textContent = "Invalid username or password.";
+        document.getElementById("errorMsg").textContent = "Invalid credentials. Try again.";
       }
     });
   </script>
