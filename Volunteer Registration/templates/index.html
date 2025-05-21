@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer Registration Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #ecf5ff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .form-container {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .form-container h2 {
+      text-align: center;
+      color: #134283;
+      font-size:40px;
+      font-weight: 700;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #134283;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background: #1257b3;
+      color: #fff;
+      padding: 12px;
+      margin-top: 20px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0a3b7e;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Volunteer Registration</h2>
+    <form id="volunteerForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="skills">Skills (e.g., First Aid, Driving)</label>
+      <input type="text" id="skills" name="skills">
+
+      <label for="availability">Availability</label>
+      <select id="availability" name="availability">
+        <option value="" disabled selected>Select</option>
+        <option>Weekdays</option>
+        <option>Weekends</option>
+        <option>Full-time</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("volunteerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById("name").value,
+        age: document.getElementById("age").value,
+        gender: document.getElementById("gender").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        address: document.getElementById("address").value,
+        skills: document.getElementById("skills").value,
+        availability: document.getElementById("availability").value
+      };
+
+      fetch("/volunteer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(response => alert(response.message))
+      .catch(error => alert("Error: " + error));
+    });
+  </script>
+</body>
+</html>

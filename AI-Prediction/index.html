@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Severity Detection</title>
+    <link rel="stylesheet"href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+
+    <header>
+        <h1>🌍 Disaster Severity Detection</h1>
+        <p>AI-powered analysis from satellite and weather images</p>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <h2>Upload Satellite Image 📤</h2>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" accept="image/*" required>
+                <button type="submit">Analyze</button>
+            </form>
+        </section>
+
+        <section class="result-section" id="resultSection" style="display: none;">
+            <h2>Prediction Result 🧠</h2>
+            <div class="card" id="resultCard">
+                <h3 id="severityLevel">-</h3>
+                <p id="confidenceScore">-</p>
+                <p id="riskAssessment">-</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Disaster Detection AI. Crafted with ❤️ for innovation.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

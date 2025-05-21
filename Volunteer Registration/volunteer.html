@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Support | Disaster Management</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background: #ecf5ff ; color: #fff; }
+
+        /* Navbar */
+        .navbar {
+            height: 90px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #1257b3;
+            background: #ecf5ff;
+            /* backdrop-filter: blur(10px); */
+            padding: 15px 30px;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); */
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 120px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #1257b3;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            background: #0a3b7e;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero { 
+            position: relative;
+            background: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg') no-repeat center/cover; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* background: rgba(0, 0, 0, 0.6); */
+        }
+
+        .hero-content {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .hero h1 { font-size: 3rem; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); }
+        
+        .btn { 
+            display: inline-block;
+            background: linear-gradient(45deg, #4b8bd4, rgb(35,78,128)); 
+            padding: 12px 24px; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-size: 1.2rem;
+            margin-top: 10px;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+        }
+        
+        .btn:hover { background: #1a62c0; transform: scale(1.1); }
+
+        /* Sections */
+        .section {
+            max-width: 800px;
+            margin: 50px auto;
+            scroll-margin-top: 200px;
+            padding: 20px;
+            background: #d1e5ff;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        
+        .section h2 { color: #02285e; margin-bottom: 10px; }
+        .section h3 { color: #034096;}
+        .section h4 { color: #1c55a0;}
+        .section p { color:#032a61; 1rem; margin-bottom: 10px; line-height: 1.5; }
+
+        /* FAQ */
+        .faq h3 {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .faq h3:hover {
+            background: #1a62c0;
+        }
+
+        .faq p {
+            display: none;
+            padding: 10px;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            color: #02285e;
+            background: rgba(126, 178, 255, 0.192);
+            color: white;
+        }
+
+        .contact-form button {
+            background: #1a62c0;
+            padding: 10px;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form :hover{
+            background-color: rgb(255, 255, 255);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="https://iili.io/3okb0mu.png" alt="Logo" class="logo">
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#roles">Roles</a>
+            <a href="#volu">Volunteer</a>
+            <a href="#FAQS">FAQ</a>
+            <a href="#contacts">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Be a Hero. Join the Rescue Mission!</h1>
+            <p style="color: #d7eaff;">Make a difference in disaster relief. Join us today.</p>
+            <a href="#" class="btn">Join as a Volunteer</a>
+        </div>
+    </div>
+
+    <!-- Volunteer Roles -->
+      <!-- Volunteer Roles Section -->
+      <div class="section" id="roles" style="animation-delay: 0.4s;"">
+        <h2>Volunteer Roles in Disaster Relief</h2>
+        <p>Volunteers play a crucial role in disaster management. Here are some key roles you can take on:</p>
+
+        <div class="role">
+            <h3>🏥 Medical Aid & First Responders</h3>
+            <p>Provide emergency first aid, assist doctors and nurses, and help injured individuals. Medical professionals or trained first-aiders are preferred.</p>
+        </div>
+
+        <div class="role">
+            <h3>🚨 Search & Rescue Operations</h3>
+            <p>Locate and assist people trapped or in danger. Requires physical fitness, teamwork, and quick decision-making.</p>
+        </div>
+
+        <div class="role">
+            <h3>🍛 Food & Water Distribution</h3>
+            <p>Ensure affected communities receive nutritious meals and clean drinking water. This role involves logistics, cooking, and safe food handling.</p>
+        </div>
+
+        <div class="role">
+            <h3>🏡 Shelter Management</h3>
+            <p>Set up and manage temporary shelters for displaced individuals. Responsibilities include organizing sleeping arrangements, distributing supplies, and maintaining hygiene.</p>
+        </div>
+
+        <div class="role">
+            <h3>🧠 Psychological Support & Counseling</h3>
+            <p>Help disaster victims cope with trauma through counseling and emotional support. This role is suited for mental health professionals or trained counselors.</p>
+        </div>
+
+        <div class="role">
+            <h3>📡 Communication & Coordination</h3>
+            <p>Maintain contact between relief teams, government agencies, and affected people. Volunteers help in managing emergency hotlines and coordinating rescue efforts.</p>
+        </div>
+
+        <div class="role">
+            <h3>📦 Logistics & Supply Chain Management</h3>
+            <p>Handle transportation, storage, and distribution of relief materials like food, medicines, and clothes.</p>
+        </div>
+
+        <div class="role">
+            <h3>📢 Awareness & Fundraising</h3>
+            <p>Organize awareness campaigns, educate communities on disaster preparedness, and raise funds for relief operations.</p>
+        </div>
+    </div>
+
+    <div class="section" style="animation-delay: 0.4s;" id="volu">
+        <h2>What Volunteers Say</h2>
+        
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>🌟 <strong>“Volunteering changed my life!</strong> Helping people in need is the best feeling.”</p>
+                <h4>- Ananya S.</h4>
+            </div>
+    
+            <div class="testimonial">
+                <p>🌟 <strong>“The teamwork and support were amazing.</strong> I’ll definitely join again!”</p>
+                <h4>- Rohan K.</h4>
+            </div>
+    
+            <div class="testimonial">
+                <p>🌟 <strong>“I met incredible people while making a difference.</strong> Highly recommend it.”</p>
+                <h4>- Priya D.</h4>
+            </div>
+    
+            <div class="testimonial">
+                <p>🌟 <strong>“Every small effort counts.</strong> Seeing smiles on people’s faces is priceless.”</p>
+                <h4>- Amit P.</h4>
+            </div>
+    
+            <div class="testimonial">
+                <p>🌟 <strong>“A truly humbling experience.</strong> I encourage everyone to try volunteering at least once!”</p>
+                <h4>- Neha T.</h4>
+            </div>
+    
+            <div class="testimonial">
+                <p>🌟 <strong>“Being part of a disaster relief team was life-changing.</strong> I learned so much!”</p>
+                <h4>- Rahul M.</h4>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+
+
+
+    <div class="section" id="contacts">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required ><br><br>
+            <input type="email" id="email" placeholder="Your Email" required><br><br>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea><br><br>
+            <!-- <button type="button" onclick="exportToExcel()">Save to Excel</button> -->
+
+            
+        </form>
+    </div>
+    
+    
+    
+    
+    <div class="section" style="animation-delay: 0.6s;" id="FAQS">
+        <h2>FAQs</h2>
+        <p><strong>❓ Who can volunteer?</strong><br> Anyone with a willingness to help! No specific skills required.</p>
+        <p><strong>❓ Do I need prior experience?</strong><br> No, training will be provided based on your role.</p>
+        <p><strong>❓ What are the main responsibilities?</strong><br> Tasks include medical aid, food distribution, rescue operations, and emotional support.</p>
+        <p><strong>❓ Is there any age restriction?</strong><br> Volunteers must be at least 18 years old. Younger volunteers need parental consent.</p>
+      
+        <p><strong>❓ How do I register?</strong><br> Click the "Join as a Volunteer" button and fill out the form.</p>
+        <p><strong>❓ Will I get a certificate?</strong><br> Yes, all volunteers receive a certificate of appreciation.</p>
+        <p><strong>❓ What if I can’t travel to disaster sites?</strong><br> Remote roles like fundraising, helpline support, and coordination are available.</p>
+    </div>
+    
+
+
+</body>
+<script>
+
+function exportToExcel(){
+    let name = document.getElementById("name").value;
+    let email= document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let data=[
+        ["Name","Email","Message"],
+        [name,email,message]
+];
+let worksheet_obj=XlXS.utils.aoa_to_sheet(data);
+let workbook=XLXS.utils.book(_new();
+XLXS.utils.book_append_sheet(worksheet_obj,workbook,"Contacts");
+XLXS.writeFile(workbook,"Contact.xlsx");
+
+}
+
+</script>
+<script src="script.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</html>

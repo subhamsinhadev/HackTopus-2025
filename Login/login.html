@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disaster Management - Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .image-section {
+      flex: 1;
+      min-width: 300px;
+      background: url('https://cdn.pixabay.com/photo/2017/06/29/00/47/storm-2455195_960_720.jpg') center/cover no-repeat;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 40px 30px;
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .form-section input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .form-section button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .form-section button:hover {
+      background-color: #0056b3;
+    }
+
+    #errorMsg {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-section {
+        width: 100%;
+        height: 200px;
+      }
+
+      .form-section {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-section"></div>
+    <div class="form-section">
+      <h2>Disaster Management Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p id="errorMsg"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username === "admin" && password === "1234") {
+        alert("Login successful!");
+        // Replace with actual redirection
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("errorMsg").textContent = "Invalid username or password.";
+      }
+    });
+  </script>
+</body>
+</html>

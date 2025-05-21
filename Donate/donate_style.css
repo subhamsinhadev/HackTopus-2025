@@ -1,0 +1,120 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f7f6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Left Side - Form */
+.form-section {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h1 {
+    font-size: 2.8rem;
+    color: #0a3b7e;
+    margin-bottom: 20px;
+}
+
+.form-section p {
+    font-size: 1.2rem;
+    color: #3463a0;
+    margin-bottom: 30px;
+}
+
+.donate-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.donate-form label {
+    font-weight: 600;
+    color: #234040;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.donate-form input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #c1dcff;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.btn.primary {
+    padding: 12px;
+    background-color: #234e80;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn.primary:hover {
+    background-color: #478983;
+}
+
+/* Login Link */
+.login-link {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #234e80;
+}
+
+.login-link a {
+    color: #234e80;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Right Side - Image */
+.image-section {
+    flex: 1;
+    background: url("https://plus.unsplash.com/premium_photo-1683140538884-07fb31428ca6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section {
+        height: 300px;
+    }
+}
